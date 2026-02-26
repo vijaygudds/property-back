@@ -1,0 +1,84 @@
+import { ActionListDTO } from '../qnatk/src';
+
+export const StaffActions: ActionListDTO = {
+    create: {
+        name: 'create',
+        mode: 'NoRecord',
+        label: 'Add New',
+        icon: 'add',
+        iconColor: 'red',
+        description: 'add staff, and create related accounts',
+        ui: {
+            mode: 'form',
+            title: 'Add New Staff',
+            message: 'Please fill the details',
+            okLabel: 'Add',
+            cancelLabel: 'Cancel',
+        },
+
+        returnModel: false,
+    },
+    edit: {
+        name: 'edit',
+        label: 'Edit',
+        icon: 'edit',
+        description: 'Edit Staff',
+        mode: 'SingleRecord',
+        loadBy: 'id',
+        ui: {
+            mode: 'form',
+            title: 'Edit Member',
+            message: 'Edit Member ?',
+            cancelLabel: 'Cancel',
+            okLabel: 'Save',
+        },
+
+        condition: {
+            is_active: true,
+        },
+        returnModel: false,
+    },
+
+    deactivate: {
+        name: 'deactivate',
+        label: 'Deactivate',
+        icon: 'unpublished',
+        description:
+            'Deactivate a staff, so he cannot open any new account, old accounts will keep working',
+        mode: 'SingleRecord',
+        loadBy: 'id',
+        ui: {
+            mode: 'confirmation',
+            title: 'Deactivate Member?',
+            message: 'Are you sure you want to deactivate this member?',
+            okLabel: 'Deactivate',
+            cancelLabel: 'Cancel',
+        },
+
+        condition: {
+            is_active: true,
+        },
+        returnModel: false,
+    },
+    activate: {
+        name: 'activate',
+        label: 'Activate',
+        icon: 'unpublished',
+        description:
+            'Activate a staff, so he cannot open any new account, old accounts will keep working',
+        mode: 'SingleRecord',
+        loadBy: 'id',
+        ui: {
+            mode: 'confirmation',
+            title: 'Deactivate Staff?',
+            message: 'Are you sure you want to deactivate this member?',
+            okLabel: 'Deactivate',
+            cancelLabel: 'Cancel',
+        },
+
+        condition: {
+            is_active: false,
+        },
+        returnModel: false,
+    },
+};

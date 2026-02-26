@@ -1,0 +1,73 @@
+import { ActionListDTO } from '../qnatk/src';
+
+export const XLogActions: ActionListDTO = {
+    // create: {
+    //     name: 'create',
+    //     mode: 'NoRecord',
+    //     label: 'Add New',
+    //     icon: 'add',
+    //     iconColor: 'red',
+    //     description: 'add Noc Log',
+    //     ui: {
+    //         mode: 'form',
+    //         title: 'Add New Noc Log',
+    //         message: 'Please fill the details',
+    //         okLabel: 'Add',
+    //         cancelLabel: 'Cancel',
+    //     },
+    //     returnModel: false,
+    // },
+    // edit: {
+    //     name: 'edit',
+    //     label: 'Edit',
+    //     icon: 'edit',
+    //     description: 'Edit Noc Log',
+    //     mode: 'SingleRecord',
+    //     loadBy: 'id',
+    //     ui: {
+    //         mode: 'form',
+    //         title: 'Edit Noc Log',
+    //         message: 'Edit Noc Log ?',
+    //         cancelLabel: 'Cancel',
+    //         okLabel: 'Save',
+    //     },
+    //     condition: {},
+    //     returnModel: false,
+    // },
+    // delete: {
+    //     name: 'delete',
+    //     label: 'Delete',
+    //     icon: 'unpublished',
+    //     description: 'Delete a Noc Log',
+    //     mode: 'SingleRecord',
+    //     loadBy: 'id',
+    //     ui: {
+    //         mode: 'confirmation',
+    //         title: 'Delete NOC Log?',
+    //         message: 'Are you sure you want to Delete this Noc Log?',
+    //         okLabel: 'Delete',
+    //         cancelLabel: 'Cancel',
+    //     },
+    //     condition: {},
+    //     returnModel: false,
+    // },
+    details: {
+        name: 'details',
+        mode: 'SingleRecord',
+        label: 'Details',
+        icon: 'info',
+        iconColor: 'primary',
+        description: 'View details',
+        loadBy: 'id',
+        ui: {
+            mode: 'confirmation',
+            title: 'View Details for this log',
+            message: '...',
+            okLabel: '',
+            cancelLabel: 'Cancel',
+        },
+        condition: {},
+
+        returnModel: false,
+    },
+};

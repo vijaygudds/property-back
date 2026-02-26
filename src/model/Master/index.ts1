@@ -1,0 +1,32 @@
+/**
+ * भवानी प्रॉपर्टी मैनेजमेंट सिस्टम
+ * Master Database Models Index File
+ *
+ * This file exports all Sequelize models for the master database.
+ * The master database manages multi-tenant architecture with clients,
+ * super users, and subscriptions.
+ *
+ * Usage:
+ * import { Client, SuperUser, Subscription } from './models/master-db';
+ */
+
+import { Client } from './Client';
+import { Staff } from './Staff';
+import { Subscription } from './Subscription';
+
+/**
+ * Master Database Model Relationships:
+ *
+ * 1. Client (One-to-Many):
+ *    - Client → SuperUser (one-to-many)
+ *    - Client → Subscription (one-to-many)
+ *
+ * 2. SuperUser (Many-to-One):
+ *    - SuperUser → Client (many-to-one, nullable for system admins)
+ *
+ * 3. Subscription (Many-to-One):
+ *    - Subscription → Client (many-to-one)
+ */
+
+// Model initialization array for master database Sequelize connection
+export const masterModels = [Client, Staff, Subscription];

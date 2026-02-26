@@ -1,0 +1,69 @@
+/**
+ * भवानी प्रॉपर्टी मैनेजमेंट सिस्टम
+ * Client Database Models Index File
+ *
+ * This file exports all Sequelize models for client databases.
+ * For master database models, see ./master-db/index.ts
+ *
+ * Import models from this file to use them in your services and controllers.
+ *
+ * Usage:
+ * import { User, Property, Buyer, Agreement } from './models';
+ * import { Client, SuperUser, Subscription } from './models/master-db';
+ */
+
+import QEntityActions from 'src/qnatk/src/models/QEntityActions';
+
+// Role and Permission Models
+
+// User Model
+export { User } from './User';
+
+// Property Related Models
+export { Property } from './Property';
+export { MapImage } from './MapImage';
+export { Plot } from './Plot';
+
+// Buyer and Agreement Models
+export { Buyer } from './Buyer';
+export { Agreement } from './Agreement';
+export { LedgerEntry } from './LedgerEntry';
+
+/**
+ * Model Relationships Overview:
+ *
+ * 1. Role & Permission System:
+ *    - QRole → QPermission (one-to-many)
+ *    - QEntityAction → QPermission (one-to-many)
+ *    - User → QRole (many-to-one)
+ *
+ * 2. Property Management:
+ *    - Property → MapImage (one-to-many)
+ *    - Property → Plot (one-to-many)
+ *
+ * 3. Sales & Transactions:
+ *    - Buyer → Agreement (one-to-many)
+ *    - Plot → Agreement (one-to-many)
+ *    - Agreement → LedgerEntry (one-to-many)
+ */
+
+// Model initialization array for Sequelize connection
+export const models = [
+  // Role & Permission Models
+  QEntityActions,
+  QRole,
+  QPermission,
+
+  // User Model
+  User,
+
+  // Property Models
+  Property,
+  MapImage,
+  Plot,
+
+  // Transaction Models
+  Buyer,
+  Agreement,
+  LedgerEntry,
+];
